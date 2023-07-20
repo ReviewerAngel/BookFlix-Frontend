@@ -48,7 +48,8 @@
 - Here is the link to the [Back-End](https://github.com/ReviewerAngel/BookFlix-Backend)
 
 ### Initial State of Kanban Board
-![kanban](https://user-images.githubusercontent.com/6623974/238977867-a2ed06f6-9726-4986-8cd5-add65c82d7d2.png)
+
+![KanBan3](https://github.com/ReviewerAngel/BookFlix-Frontend/assets/137305823/fdea3cc4-17cd-4b28-9ee9-53ec117ce351)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
