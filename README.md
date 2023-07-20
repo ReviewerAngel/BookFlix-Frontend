@@ -27,7 +27,7 @@
 
 # BookFlix 🏠️🛠️ <a name="about-project"></a>
 
-<b>BookFlix</b> is a website where users can book a service, cancel a booking. The user can also see the details of a service, ratings of the service.
+<b>BookFlix</b> is a website where users can book a service, or cancel a booking. The user can also see the details of the service and ratings of the service.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,10 +42,10 @@
 </details>
 
 ### App Screenshot
-![screenshot](https://github.com/Lucash2022/BookFlix-Backend/blob/dev/screenshot.jpg)
+![screenshot](#)
 
 ### Back-end Repository
-- Here is the link of the [Back-End](https://github.com/Lucash2022/BookFlix-Backend)
+- Here is the link to the [Back-End](https://github.com/ReviewerAngel/BookFlix-Backend)
 
 ### Initial State of Kanban Board
 ![kanban](https://user-images.githubusercontent.com/6623974/238977867-a2ed06f6-9726-4986-8cd5-add65c82d7d2.png)
