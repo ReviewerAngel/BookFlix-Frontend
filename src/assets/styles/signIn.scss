@@ -17,7 +17,7 @@
 }
 
 .side-image2 {
-  // background-image: url("../../assets/images/signin.jpg");
+  background-image: url("../../assets/images/signin.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,13 +53,13 @@
 }
 
 .book {
-  color: #5e17eb;
+  color: $primary;
   font-weight: bold;
 }
 
 .line {
   display: block;
-  border-bottom: 3px solid #5e17eb;
+  border-bottom: 3px solid $primary;
   width: 30%;
   height: 3px;
   margin-bottom: 30px;
@@ -83,7 +83,7 @@
   width: 100%;
   padding: 15px;
   margin-bottom: 1rem;
-  border: 2px solid #5e17eb;
+  border: 2px solid $primary;
   border-radius: 30px;
   font-size: 1rem;
 }
@@ -95,7 +95,7 @@
 }
 
 .session-link-btn {
-  color: #5e17eb;
+  color: $primary;
   text-decoration: none;
 }
 
@@ -154,7 +154,7 @@
   }
 
   .book {
-    color: #5e17eb;
+    color: $primary;
     font-weight: bold;
   }
   
