@@ -11,7 +11,7 @@ import Admin from './IsAdmin';
 
 const Navbar = ({ sidebarOpen }) => {
   const links = [
-    { id: 1, name: 'Services', path: '/' },
+    { id: 1, name: 'Movies', path: '/' },
   ];
 
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ const Navbar = ({ sidebarOpen }) => {
             {isLoggedIn && isAdmin && (
             <>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/add-service">Add Service</NavLink>
+                <NavLink className="nav-link" to="/add-service">Add Movies</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/delete-services">Delete Service</NavLink>
@@ -101,7 +101,7 @@ const Navbar = ({ sidebarOpen }) => {
             <Link to="/" className="social-link">
               <FaLinkedin />
             </Link>
-            <Link to="https://github.com/PrantoshB/HandyMate-Frontend" className="social-link">
+            <Link to="hhttps://github.com/Lucash2022/BookFlix-Frontend" className="social-link">
               <FaGithub />
             </Link>
           </div>
@@ -111,23 +111,23 @@ const Navbar = ({ sidebarOpen }) => {
               {' '}
               <strong>
                 <span>
-                  <a href="https://github.com/PrantoshB">P</a>
+                  <a href="https://github.com/Lucash2022">L</a>
                 </span>
 &nbsp;
                 <span>
-                  <a href="https://github.com/haliljon">H</a>
+                  <a href="https://github.com/torobucci">K</a>
                 </span>
 &nbsp;
                 <span>
-                  <a href="https://github.com/utsargo">U</a>
+                  <a href="https://github.com/SabaAhmad404">A</a>
                 </span>
 &nbsp;
                 <span>
-                  <a href="https://github.com/JacintaNgwu">J</a>
+                  <a href="https://github.com/SamTush">T</a>
                 </span>
 &nbsp;
                 <span>
-                  <a href="https://github.com/yetemegn-telaye">Y</a>
+                  <a href="https://github.com/FaranoshAmini">F</a>
                 </span>
 
               </strong>

@@ -65,7 +65,7 @@ const MobileNav = () => {
                     onClick={handleOffcanvasClose}
                     href="/"
                   >
-                    Services
+                    Movies
                   </Nav.Link>
                   {isLoggedIn && (
                     <>

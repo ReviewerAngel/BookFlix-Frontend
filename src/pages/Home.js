@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className="home col-md col">
       <h1 className="bold-font homepage-heading">
-        OUR SERVICES
+        OUR MOVIES
       </h1>
       <p className="gray-font">
         Please select a Movie to reserve
