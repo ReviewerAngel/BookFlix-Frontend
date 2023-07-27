@@ -12,7 +12,7 @@ const SignIn = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3000/login', {
+      .post('https://movie-rush.onrender.com/login', {
         user: {
           email,
           password,
