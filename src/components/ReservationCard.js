@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { deleteReservation } from '../store/ReservationsSlice';
 
 const ReservationCard = ({
-  startDate, endDate, userName, serviceName, locationName, reservationId, serviceImage,
+  startDate, endDate, userName, movieName, locationName, reservationId, movieImage,
 }) => {
   const dispatch = useDispatch();
 
@@ -15,11 +15,11 @@ const ReservationCard = ({
   return (
     <div className="reservation-card col-md-12">
       <div className="image-and-text d-flex justify-content-start align-items-center">
-        <img src={serviceImage} alt={serviceName} className="service-thumb" />
+        <img src={movieImage} alt={movieName} className="movie-thumb" />
         <p className="my-0 mx-1 reservation-card-details">
-          <strong>{serviceName}</strong>
+          <strong>{movieName}</strong>
           {' '}
-          service reserved by
+          movie reserved by
           {' '}
           <strong>{userName}</strong>
           {' '}
@@ -50,8 +50,8 @@ ReservationCard.propTypes = {
   startDate: PropTypes.string.isRequired,
   endDate: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
-  serviceName: PropTypes.string.isRequired,
+  movieName: PropTypes.string.isRequired,
   locationName: PropTypes.string.isRequired,
   reservationId: PropTypes.number.isRequired,
-  serviceImage: PropTypes.string.isRequired,
+  movieImage: PropTypes.string.isRequired,
 };

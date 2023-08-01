@@ -7,7 +7,7 @@ afterEach(() => {
 
 describe('AddService', () => {
   it('AddService renders correctly', () => {
-    const addservice = render(<AddService />);
-    expect(addservice).toMatchSnapshot();
+    const addmovie = render(<AddService />);
+    expect(addmovie).toMatchSnapshot();
   });
 });

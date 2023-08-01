@@ -3,22 +3,22 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
-import { fetchServices } from '../store/ServicesSlice';
-import ReserveFromService from '../components/ReserveFromService';
+import { fetchMovies } from '../store/MoviesSlice';
+import ReserveFromMovie from '../components/ReserveFromMovie';
 
 const Details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const services = useSelector((state) => state.services.services);
-  const service = services.find((service) => service.id === Number(id));
+  const movies = useSelector((state) => state.movies.movies);
+  const movie = movies.find((movie) => movie.id === Number(id));
 
   const [showForm, setShowForm] = useState(false);
 
   const rating = Math.round((Math.random() * (5 - 4) + 4) * 10) / 10;
 
   useEffect(() => {
-    dispatch(fetchServices());
+    dispatch(fetchMovies());
   }, [dispatch]);
 
   const handleReserveClick = () => {
@@ -36,7 +36,7 @@ const Details = () => {
             <div className="col-md-6 d-flex flex-column align-items-center">
               <div className="row">
                 <div className="col-12 text-center">
-                  <img src={service.image} alt={service.name} className="shadow-lg img-fluid mx-auto service-details-image" />
+                  <img src={movie.image} alt={movie.name} className="shadow-lg img-fluid mx-auto movie-details-image" />
                 </div>
               </div>
 
@@ -50,28 +50,28 @@ const Details = () => {
             </div>
 
             <div className="col-md-6 d-flex flex-column align-items-center">
-              <h2>{service.name}</h2>
+              <h2>{movie.name}</h2>
               <table className="table table-striped ">
                 <tbody>
                   <tr>
                     <td>Description</td>
-                    <td>{service.details}</td>
+                    <td>{movie.details}</td>
                   </tr>
                   <tr>
                     <td>Trailer</td>
-                    <td><a href={service.trailer} target="_blank" rel="noopener noreferrer">Watch now</a></td>
+                    <td><a href={movie.trailer} target="_blank" rel="noopener noreferrer">Watch now</a></td>
                   </tr>
                   <tr>
-                    <td>Service charge</td>
+                    <td>Movie charge</td>
                     <td>
                       $
-                      {service.price}
+                      {movie.price}
                     </td>
                   </tr>
                   <tr>
                     <td>Duration</td>
                     <td>
-                      {service.duration}
+                      {movie.duration}
                       {' '}
                       hours
                     </td>
@@ -96,7 +96,7 @@ const Details = () => {
           </div>
         </div>
       ) : (
-        <ReserveFromService serviceId={id} />
+        <ReserveFromMovie movieId={id} />
       )}
     </>
   );

@@ -51,10 +51,10 @@ const Navbar = ({ sidebarOpen }) => {
             {isLoggedIn && isAdmin && (
             <>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/add-service">Add Movies</NavLink>
+                <NavLink className="nav-link" to="/add-movie">Add Movies</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/delete-services">Delete Service</NavLink>
+                <NavLink className="nav-link" to="/delete-movies">Delete Movie</NavLink>
               </li>
             </>
             )}

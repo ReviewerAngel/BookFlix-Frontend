@@ -90,16 +90,16 @@ const MobileNav = () => {
                       <Nav.Link
                         className="nav-link"
                         onClick={handleOffcanvasClose}
-                        href="/add-service"
+                        href="/add-movie"
                       >
-                        Add Service
+                        Add Movie
                       </Nav.Link>
                       <Nav.Link
                         className="nav-link"
                         onClick={handleOffcanvasClose}
-                        href="/delete-services"
+                        href="/delete-movies"
                       >
-                        Delete Service
+                        Delete Movie
                       </Nav.Link>
                     </>
                   )}

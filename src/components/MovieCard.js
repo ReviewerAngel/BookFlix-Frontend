@@ -11,27 +11,27 @@ const ServiceCard = ({
     <div>
       <Link
         to={{
-          pathname: `/services/${id}`,
+          pathname: `/movies/${id}`,
         }}
         className="singlecard"
       >
-        <img src={image} alt={name} className="service-image" />
-        <h4 className="bold-font service-name">{name}</h4>
+        <img src={image} alt={name} className="movie-image" />
+        <h4 className="bold-font movie-name">{name}</h4>
         <hr className="dash" />
-        <div className="service-rating-price">
+        <div className="movie-rating-price">
           <span className="bold-font gray-font">
             <i className="fa-sharp fa-solid fa-star-half-stroke" />
             {' '}
             {rating}
           </span>
-          <span className="service-circle-splitter" />
+          <span className="movie-circle-splitter" />
           <span className="bold-font gray-font">
             <i className="fa-solid fa-dollar-sign" />
             {' '}
             {price}
           </span>
         </div>
-        <p className="gray-font service-details">{details}</p>
+        <p className="gray-font movie-details">{details}</p>
       </Link>
     </div>
   );
