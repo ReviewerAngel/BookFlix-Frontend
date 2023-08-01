@@ -1,19 +1,19 @@
-.add-service-container {
+.add-movie-container {
   background:
-    linear-gradient(0deg, rgb(94 23 235 / 88%), rgb(144 73 255 / 88%)),
-    url("https://wallpaperaccess.com/full/5485715.jpg");
+    linear-gradient(0deg, rgb(146 185 10 / 88%), rgb(146 185 12 / 88%)),
+    url("../images/reservation.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   background-position: center;
 }
 
-.add-service-div {
+.add-movie-div {
   width: 70%;
   border-radius: 1rem;
 }
 
-.add-service-form .form-control {
+.add-movie-form .form-control {
   border-radius: 2rem;
   border-color: var(--primary-color);
 }

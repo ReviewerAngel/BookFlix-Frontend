@@ -22,7 +22,7 @@ export const { setUsers } = userSlice.actions;
 export default userSlice.reducer;
 
 const fetchUsers = () => async (dispatch) => {
-  const response = await fetch('https://movie-rush.onrender.com/api/v1/users');
+  const response = await fetch('https://book-flix-app.onrender.com/api/v1/users');
   const data = await response.json();
   dispatch(setUsers(data));
 };

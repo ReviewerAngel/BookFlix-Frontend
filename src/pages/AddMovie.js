@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addService } from '../store/ServicesSlice';
+import { addMovie } from '../store/MoviesSlice';
 import { storage } from '../firebaseConfig';
 
-const AddService = () => {
+const AddMovie = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
@@ -54,7 +54,7 @@ const AddService = () => {
       },
       () => {
         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-          const newService = {
+          const newMovie = {
             name,
             price,
             image: downloadURL,
@@ -62,7 +62,7 @@ const AddService = () => {
             trailer,
             duration,
           };
-          dispatch(addService(newService));
+          dispatch(addMovie(newMovie));
           setName('');
           setPrice('');
           setImage('');
@@ -81,29 +81,32 @@ const AddService = () => {
   };
 
   return (
-    <div className="col-md col container-fluid d-flex justify-content-center align-items-center add-service-container">
-      <div className="d-flex flex-column m-5 align-items-center add-service-div">
-        <h2 className="text-white w-100 text-center my-3">Add New Service</h2>
+    <div className="col-md col container-fluid d-flex justify-content-center align-items-center add-movie-container">
+      <div className="d-flex flex-column m-5 align-items-center add-movie-div">
+        <h2 className="text-white w-100 text-center my-3">Add New Movie</h2>
 
-        <form className="row g-4 add-service-form">
+        <form className="row g-4 add-movie-form">
           <div className="col-md-12">
-            <input type="text" placeholder="Service Type" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="Movie Type" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
 
           <div className="input-group col-md-12">
             <span className="input-group-text add-price-input">$</span>
-            <input type="float" placeholder="Service Charge" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <input type="float" placeholder="Movie Charge" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
             <span className="input-group-text add-price-input">.00</span>
           </div>
           <div className="col-md-12">
             <input type="textarea" placeholder="Details" className="form-control" value={details} onChange={(e) => setDetails(e.target.value)} />
+          </div>
+          <div className="col-md-12">
+            <input type="textarea" placeholder="trailer" className="form-control" value={trailer} onChange={(e) => setTrailer(e.target.value)} />
           </div>
           <div className="col-md-12 d-flex flex-md-row flex-column justify-content-between g-4">
             <input type="file" className="form-control" id="inputGroupFile02" onChange={handleFileChange} />
             <input type="number" placeholder="Duration" className="form-control" value={duration} onChange={(e) => setDuration(e.target.value)} />
           </div>
           <div className="col-md-12 d-flex justify-content-end g-3">
-            <button type="button" className="col-md-5 btn btn-light text-success rounded-pill mx-3" onClick={handleAddClick}>Add Service</button>
+            <button type="button" className="col-md-5 btn btn-light text-success rounded-pill mx-3" onClick={handleAddClick}>Add Movie</button>
             <button type="button" className="col-md-4 btn btn-danger rounded-pill" onClick={handleCancelClick}>Cancel</button>
           </div>
 
@@ -134,4 +137,4 @@ const AddService = () => {
   );
 };
 
-export default AddService;
+export default AddMovie;

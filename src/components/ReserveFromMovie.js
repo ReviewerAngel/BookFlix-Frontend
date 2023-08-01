@@ -9,11 +9,11 @@ const ReservationForm = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const locations = useSelector((state) => state.locations.locations);
-  const services = useSelector((state) => state.services.services);
+  const movies = useSelector((state) => state.movies.movies);
   const userId = localStorage.getItem('userId');
   const fullName = localStorage.getItem('full_name');
 
-  const service = services.find((service) => service.id === Number(id));
+  const movie = movies.find((movie) => movie.id === Number(id));
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -29,7 +29,7 @@ const ReservationForm = () => {
     const reservationData = {
       start_date: startDate,
       end_date: endDate,
-      service_id: parseInt(id, 10),
+      movie_id: parseInt(id, 10),
       user_id: parseInt(userId, 10),
       location_id: parseInt(locationId, 10),
     };
@@ -42,13 +42,13 @@ const ReservationForm = () => {
     navigate('/reservations');
   };
   const formStyle = {
-    backgroundImage: `url(${service && service.image})`,
+    backgroundImage: `url(${movie && movie.image})`,
     backgroundSize: 'contain',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   };
   return (
-    <div className="col-md container-main reservation-form-body p-0" style={formStyle}>
+    <div className="col-md container-main reservation-form-body p-0 reservation-container" style={formStyle}>
       <div className="reservation-form-overlay col-md p-2 m-0 d-flex flex-column align-items-center justify-content-center">
 
         <h1 className="heading text-light text-uppercase text-center">
@@ -58,8 +58,8 @@ const ReservationForm = () => {
           {' '}
 
         </h1>
-        <p className="text-light text-center service-name-in-form heading text-uppercase">
-          {service && service.name}
+        <p className="text-light text-center movie-name-in-form heading text-uppercase">
+          {movie && movie.name}
         </p>
         <hr className="w-50 border-top-2 border-light" />
         <form onSubmit={handleSubmit} id="reservation-form" className="d-flex flex-column align-items-center g-6">

@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import serviceReducer from './ServicesSlice';
+import movieReducer from './MoviesSlice';
 import reservationReducer from './ReservationsSlice';
 import locationReducer from './LocationsSlice';
 import userReducer from './UsersSlice';
 
 const store = configureStore({
   reducer: {
-    services: serviceReducer,
+    movies: movieReducer,
     reservations: reservationReducer,
     locations: locationReducer,
     users: userReducer,

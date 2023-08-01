@@ -1,4 +1,4 @@
-$primary: #8c52ff !default;
+$primary: #98bf11 !default;
 $gray: #efefef;
 $gray-font: #adadaf;
 
@@ -8,8 +8,8 @@ $gray-font: #adadaf;
 @import "./details.scss";
 @import "./signIn.scss";
 @import "./nav.scss";
-@import "./delete-service-style.scss";
-@import "./add-service-style.scss";
+@import "./delete-movie-style.scss";
+@import "./add-movie-style.scss";
 
 :root {
   --primary-color: $primary;

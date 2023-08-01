@@ -7,7 +7,7 @@ afterEach(() => {
 
 describe('DeleteServices', () => {
   it('DeleteServices renders correctly', () => {
-    const deleteservices = render(<DeleteServices />);
-    expect(deleteservices).toMatchSnapshot();
+    const deletemovies = render(<DeleteServices />);
+    expect(deletemovies).toMatchSnapshot();
   });
 });

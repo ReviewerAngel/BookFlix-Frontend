@@ -2,12 +2,12 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCok6eLh1EjjZu5YQrUrtLwbMj8umgiXSw',
-  authDomain: 'handymate-services.firebaseapp.com',
-  projectId: 'handymate-services',
-  storageBucket: 'handymate-services.appspot.com',
-  messagingSenderId: '849058977088',
-  appId: '1:849058977088:web:8f14952da95791706f96a5',
+  apiKey: 'AIzaSyBXb3v0YBTlYNazrGyC24nlsHI2qxtF_hY',
+  authDomain: 'bookflix-7372c.firebaseapp.com',
+  projectId: 'bookflix-7372c',
+  storageBucket: 'bookflix-7372c.appspot.com',
+  messagingSenderId: '475609461963',
+  appId: '1:475609461963:web:05bd10d063aa93beac174e',
 };
 
 firebase.initializeApp(firebaseConfig);

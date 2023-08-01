@@ -6,15 +6,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import ServiceCard from '../components/ServiceCard';
-import { fetchServices } from '../store/ServicesSlice';
+import MovieCard from '../components/MovieCard';
+import { fetchMovies } from '../store/MoviesSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const cards = useSelector((state) => state.services.services);
+  const cards = useSelector((state) => state.movies.movies);
 
   useEffect(() => {
-    dispatch(fetchServices());
+    dispatch(fetchMovies());
   }, [dispatch]);
 
   const isMobile = window.innerWidth <= 768;
@@ -31,7 +31,7 @@ const Home = () => {
       <div className="carousel-container col-12">
 
         <Swiper
-          className="service-list col-10"
+          className="movie-list col-10"
           modules={[Navigation, A11y]}
           spaceBetween={0}
           slidesPerView={isMobile ? 1 : 3}
@@ -41,7 +41,7 @@ const Home = () => {
             <SwiperSlide
               key={card.id}
             >
-              <ServiceCard
+              <MovieCard
                 name={card.name}
                 image={card.image}
                 details={card.details}

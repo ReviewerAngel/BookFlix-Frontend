@@ -7,10 +7,10 @@ import Reservations from './pages/Reservations';
 import ReservationForm from './pages/ReservationForm';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import AddService from './pages/AddService';
+import AddService from './pages/AddMovie';
 import Navbar from './components/Navbar';
 import Details from './pages/Details';
-import DeleteServices from './pages/DeleteService';
+import DeleteServices from './pages/DeleteMovie';
 import MobileNav from './components/MobileNav';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
@@ -68,27 +68,27 @@ const App = () => {
             </Route>
             <Route
               exact
-              path="/add-service"
+              path="/add-movie"
               element={<AdminRoute />}
             >
               <Route
                 exact
-                path="/add-service"
+                path="/add-movie"
                 element={<AddService />}
               />
             </Route>
             <Route
               exact
-              path="/delete-services"
+              path="/delete-movies"
               element={<AdminRoute />}
             >
               <Route
                 exact
-                path="/delete-services"
+                path="/delete-movies"
                 element={<DeleteServices />}
               />
             </Route>
-            <Route exact path="/services/:id" element={<Details />} />
+            <Route exact path="/movies/:id" element={<Details />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
 

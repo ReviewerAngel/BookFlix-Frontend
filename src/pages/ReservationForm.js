@@ -3,30 +3,30 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { createReservation } from '../store/ReservationsSlice';
 import { fetchLocations } from '../store/LocationsSlice';
-import { fetchServices } from '../store/ServicesSlice';
+import { fetchMovies } from '../store/MoviesSlice';
 
 const ReservationForm = () => {
-  const { id } = useParams(); // Extract the serviceId from the URL path
+  const { id } = useParams(); // Extract the movieId from the URL path
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const locations = useSelector((state) => state.locations.locations);
-  const services = useSelector((state) => state.services.services);
+  const movies = useSelector((state) => state.movies.movies);
   const userId = localStorage.getItem('userId');
   const fullName = localStorage.getItem('full_name');
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [serviceId, setServiceId] = useState(id || '');
+  const [movieId, setMovieId] = useState(id || '');
   const [locationId, setLocationId] = useState('');
 
   useEffect(() => {
     dispatch(fetchLocations());
-    dispatch(fetchServices());
+    dispatch(fetchMovies());
   }, [dispatch]);
 
   useEffect(() => {
     if (id) {
-      setServiceId(id); // Set the serviceId extracted from the URL as the initial value
+      setMovieId(id); // Set the movieId extracted from the URL as the initial value
     }
   }, [id]);
 
@@ -36,7 +36,7 @@ const ReservationForm = () => {
     const reservationData = {
       start_date: startDate,
       end_date: endDate,
-      service_id: parseInt(serviceId, 10),
+      movie_id: parseInt(movieId, 10),
       user_id: parseInt(userId, 10),
       location_id: parseInt(locationId, 10),
     };
@@ -45,7 +45,7 @@ const ReservationForm = () => {
 
     setStartDate('');
     setEndDate('');
-    setServiceId('');
+    setMovieId('');
     setLocationId('');
 
     navigate('/reservations');
@@ -77,16 +77,16 @@ const ReservationForm = () => {
             </label>
           </div>
           <div className="d-flex input-row align-items-center g-4">
-            <label htmlFor="serviceId">
+            <label htmlFor="movieId">
               <div className="select-wrapper">
-                <select className="p-2 px-0" defaultValue={serviceId} onChange={(e) => setServiceId(e.target.value)} name="serviceId">
-                  <option value="">Select a service</option>
-                  {services.map((service) => (
+                <select className="p-2 px-0" defaultValue={movieId} onChange={(e) => setMovieId(e.target.value)} name="movieId">
+                  <option value="">Select a movie</option>
+                  {movies.map((movie) => (
                     <option
-                      key={service.id}
-                      value={service.id}
+                      key={movie.id}
+                      value={movie.id}
                     >
-                      {service.name}
+                      {movie.name}
                     </option>
                   ))}
                 </select>

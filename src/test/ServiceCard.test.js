@@ -7,7 +7,7 @@ afterEach(() => {
 
 describe('ServiceCard', () => {
   it('ServiceCard renders correctly', () => {
-    const servicecard = render(<ServiceCard />);
-    expect(servicecard).toMatchSnapshot();
+    const moviecard = render(<ServiceCard />);
+    expect(moviecard).toMatchSnapshot();
   });
 });

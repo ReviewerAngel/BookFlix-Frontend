@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ReservationCard from '../components/ReservationCard';
 import { fetchReservations } from '../store/ReservationsSlice';
-import { fetchServices } from '../store/ServicesSlice';
+import { fetchMovies } from '../store/MoviesSlice';
 import { fetchLocations } from '../store/LocationsSlice';
 import { fetchUsers } from '../store/UsersSlice';
 
 const Reservations = () => {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservations.reservations);
-  const services = useSelector((state) => state.services.services);
+  const movies = useSelector((state) => state.movies.movies);
   const locations = useSelector((state) => state.locations.locations);
   const users = useSelector((state) => state.users.users);
 
@@ -18,7 +18,7 @@ const Reservations = () => {
 
   useEffect(() => {
     dispatch(fetchReservations());
-    dispatch(fetchServices());
+    dispatch(fetchMovies());
     dispatch(fetchLocations());
     dispatch(fetchUsers());
   }, [dispatch]);
@@ -28,14 +28,14 @@ const Reservations = () => {
     return location ? location.name : '';
   };
 
-  const getServiceName = (serviceId) => {
-    const service = services.find((s) => s.id === serviceId);
-    return service ? service.name : '';
+  const getMovieName = (movieId) => {
+    const movie = movies.find((s) => s.id === movieId);
+    return movie ? movie.name : '';
   };
 
-  const getServiceImage = (serviceId) => {
-    const service = services.find((s) => s.id === serviceId);
-    return service ? service.image : '';
+  const getMovieImage = (movieId) => {
+    const movie = movies.find((s) => s.id === movieId);
+    return movie ? movie.image : '';
   };
 
   const getUserName = (userId) => {
@@ -56,11 +56,11 @@ const Reservations = () => {
           <ReservationCard
             startDate={reservation.start_date}
             endDate={reservation.end_date}
-            serviceName={getServiceName(reservation.service_id)}
+            movieName={getMovieName(reservation.movie_id)}
             userName={getUserName(reservation.user_id)}
             locationName={getLocationName(reservation.location_id)}
             reservationId={reservation.id}
-            serviceImage={getServiceImage(reservation.service_id)}
+            movieImage={getMovieImage(reservation.movie_id)}
             key={reservation.id}
           />
         ))}
